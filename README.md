@@ -60,5 +60,7 @@ Case studies must be marked as simulated unless based on authorized real-world a
 B.Sc. Computer Science Student  
 Cybersecurity / Software Development
 
-- GitHub: `https://github.com/aryanchavan34-svg`
-- LinkedIn: `https://www.linkedin.com/in/aryan-chavan-qwer34/`
+- GitHub: https://github.com/aryanchavan34-svg
+- LinkedIn: https://www.linkedin.com/in/aryan-chavan-qwer34/
+
+Feel free to comment, if you thing something can change for better.
