@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Asset Inventory | CyberRisk SME{% endblock %}
+{% block content %}
+<div class="section-head"><div><p class="eyebrow">IDENTIFY</p><h1>Asset Inventory</h1></div><a class="button" href="{{ url_for('add_asset') }}">+ Add Asset</a></div>
+<section class="card">
+<table>
+<thead><tr><th>ID</th><th>Name</th><th>Type</th><th>Owner</th><th>C</th><th>I</th><th>A</th><th>Score</th><th>Level</th></tr></thead>
+<tbody>
+{% for asset in assets %}
+<tr><td>{{ asset.id }}</td><td>{{ asset.name }}</td><td>{{ asset.asset_type }}</td><td>{{ asset.owner }}</td><td>{{ asset.confidentiality }}</td><td>{{ asset.integrity }}</td><td>{{ asset.availability }}</td><td>{{ asset.criticality_score }}</td><td><span class="badge {{ asset.criticality|lower }}">{{ asset.criticality }}</span></td></tr>
+{% else %}
+<tr><td colspan="9">No assets found.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | CyberRisk SME{% endblock %}
+{% block content %}
+<section class="hero">
+<p class="eyebrow">SME CYBERSECURITY</p>
+<h1>Cybersecurity Risk Assessment Framework</h1>
+<p>Phase 1: Asset Identification & Criticality Assessment</p>
+</section>
+<div class="stats">
+<div class="stat"><span>Total Assets</span><strong>{{ assets|length }}</strong></div>
+<div class="stat"><span>Critical Assets</span><strong>{{ assets|selectattr('criticality','equalto','Critical')|list|length }}</strong></div>
+<div class="stat"><span>High Assets</span><strong>{{ assets|selectattr('criticality','equalto','High')|list|length }}</strong></div>
+</div>
+<section class="card">
+<div class="section-head"><h2>Asset Inventory</h2><a class="button" href="{{ url_for('add_asset') }}">+ Add Asset</a></div>
+<table>
+<thead><tr><th>Asset</th><th>Type</th><th>Owner</th><th>Score</th><th>Criticality</th></tr></thead>
+<tbody>
+{% for asset in assets[:10] %}
+<tr><td>{{ asset.name }}</td><td>{{ asset.asset_type }}</td><td>{{ asset.owner }}</td><td>{{ asset.criticality_score }}</td><td><span class="badge {{ asset.criticality|lower }}">{{ asset.criticality }}</span></td></tr>
+{% else %}
+<tr><td colspan="5">No assets added yet.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</section>
+{% endblock %}

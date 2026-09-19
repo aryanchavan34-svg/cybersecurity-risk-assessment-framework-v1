@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Add Asset | CyberRisk SME{% endblock %}
+{% block content %}
+<p class="eyebrow">IDENTIFY</p>
+<h1>Add Business Asset</h1>
+<p class="subtitle">Record an asset and evaluate its CIA requirements.</p>
+<section class="card form-card">
+<form method="post">
+<label>Asset Name<input name="name" required placeholder="Customer Database"></label>
+<label>Asset Type
+<select name="asset_type" required>
+<option>Hardware</option><option>Software</option><option>Data</option><option>Network</option>
+<option>Cloud Service</option><option>Digital Asset</option><option>Credential</option><option>People</option>
+</select></label>
+<label>Owner<input name="owner" required placeholder="IT Department"></label>
+<label>Description<textarea name="description" placeholder="Business purpose and security context"></textarea></label>
+<div class="grid">
+<label>Confidentiality<select name="confidentiality">{% for n in range(1,6) %}<option>{{ n }}</option>{% endfor %}</select></label>
+<label>Integrity<select name="integrity">{% for n in range(1,6) %}<option>{{ n }}</option>{% endfor %}</select></label>
+<label>Availability<select name="availability">{% for n in range(1,6) %}<option>{{ n }}</option>{% endfor %}</select></label>
+</div>
+<p class="hint">Rating: 1 = very low requirement, 5 = very high requirement.</p>
+<button class="button" type="submit">Save Asset</button>
+</form>
+</section>
+{% endblock %}

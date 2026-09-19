@@ -1,0 +1,41 @@
+# Cybersecurity Risk Assessment Framework for Small Businesses
+
+A professional web-based cybersecurity risk assessment framework for small and medium-sized enterprises (SMEs).
+
+## Workflow
+Asset Identification → Threat Identification → Vulnerability Assessment → Risk Evaluation → Risk Prioritization → Mitigation → Reporting
+
+## Current Release: Phase 1
+- Asset inventory
+- Asset categories and ownership
+- CIA (Confidentiality, Integrity, Availability) ratings
+- Automatic asset criticality score
+- Criticality classification
+- SQLite persistence
+- Dashboard and inventory views
+- Automated scoring tests
+
+## Planned Releases
+1. Asset Identification
+2. Threat Identification
+3. Vulnerability Assessment
+4. Risk Evaluation Engine
+5. Risk Prioritization Dashboard
+6. Mitigation Recommendations
+7. Case Study Validation
+8. PDF Risk Reporting
+9. Security hardening and final documentation
+
+## Technology
+Python, Flask, SQLite, HTML5, CSS3, JavaScript, pytest
+
+## Run
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python -m app.app
+```
+Open http://127.0.0.1:5000
+
+Case studies must be marked as simulated unless based on authorized real-world assessment data.
