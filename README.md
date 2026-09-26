@@ -32,6 +32,7 @@ Python, Flask, SQLite, HTML5, CSS3, JavaScript, pytest
 ## Run
 ```bash
 git clone https://github.com/aryanchavan34-svg/cybersecurity-risk-assessment-framework-v1.git
+pip install -r requirements.txt 
 ```
 Open http://127.0.0.1:5000
 
